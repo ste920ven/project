@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block title %}User{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block body %}
+{{ super() }}
+<div class="container">
+  <div class="row">
+    <div class="span6 offset2">
+      <form class="form-horizontal" action="" method="POST">
+	<legend>New Place</legend>
+	<div class="control-group">
+	  <label class="control-label" for="inputYes">Are you the owner of this place?</label>
+	  <div class="controls">
+	    <label class="radio">
+	      Yes<input type="radio" id="inputYes" name="owner">
+	    </label>
+	    <label class="radio">
+	      No<input type="radio" name="owner">
+	    </label>
+	  </div>
+	</div>
+	<div class="control-group">
+	  <label class="control-label" for="inputName">Name of place</label>
+	  <div class="controls">
+	    <input type="text" id="inputName" placeholder="Name">
+	  </div>
+	</div>
+	<div class="control-group">
+	  <label class="control-label" for="inputAddress">Address</label>
+	  <div class="controls">
+	    <input type="text" id="inputAddress" placeholder="">
+	  </div>
+	</div>
+	<div class="control-group">
+	  <label class="control-label" for="inputCity">City</label>
+	  <div class="controls">
+	    <input type="text" id="inputCity" placeholder="">
+	  </div>
+	</div>  <div class="control-group">
+	  <label class="control-label" for="inputState">State</label>
+	  <div class="controls">
+	    <input type="text" id="inputState" placeholder="">
+	  </div>
+	</div>  <div class="control-group">
+	  <label class="control-label" for="inputZipcode">Zipcode</label>
+	  <div class="controls">
+	    <input type="text" id="inputZipcode" placeholder="">
+	  </div>
+	</div>  <div class="control-group">
+	  <label class="control-label" for="inputWeb">Web address</label>
+	  <div class="controls">
+	    <input type="text" id="inputWeb" placeholder="">
+	  </div>
+	</div>  <div class="control-group">
+	  <label class="control-label" for="inputPhone">Phone</label>
+	  <div class="controls">
+	    <input type="text" id="inputPhone" placeholder="">
+	  </div>
+	</div>  <div class="control-group">
+	  <label class="control-label" for="inputEmail">Mail</label>
+	  <div class="controls">
+	    <input type="text" id="inputEmail" placeholder="">
+	  </div>
+	</div>  <div class="control-group">
+	  <label class="control-label" for="inputDesc">Other note on this place</label>
+	  <div class="controls">
+	    <input type="text" id="inputDesc" placeholder="">
+	  </div>
+	</div>
+	<label>Category</label>
+	<label>Hours</label>
+	<select class="form-control">
+	  <option value="Monday">Monday</option>
+	  <option value="Tuesday">Tuesday</option>
+	  <option value="Wednesday">Wednesday</option>
+	  <option value="Thursday">Thursday</option>
+	</select>
+	<select class="form-control">
+	  <option value="1AM">1:00</option>
+	  <option value="2AM">2:00</option>
+	  <option value="3AM">3:00</option>
+	  <option value="4AM">4:00</option>
+	  <option value="5AM">5:00</option>
+	  <option value="6AM">6:00</option>
+	  <option value="7AM">7:00</option>
+	  <option value="8AM">8:00</option>
+	  <option value="9AM">9:00</option>
+	  <option value="10AM">10:00</option>
+	  <option value="11AM">11:00</option>
+	  <option value="12AM">12:00</option>
+	</select>
+	<select>
+	  <option value="1AM">1:00</option>
+	  <option value="2AM">2:00</option>
+	  <option value="3AM">3:00</option>
+	  <option value="4AM">4:00</option>
+	</select>
+	<button name="submit" type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

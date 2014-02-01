@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}User{% endblock %}
+{% block head %}
+{{ super() }}
+<script type="text/javascript" src="/static/js/search.js"></script>
+{% endblock %}
+{% block body %}
+{{ super() }}
+<div class="container" >
+  <div class="row">
+    <ul class="breadcrumb">
+      <!--loop through and create breadcrumb -->
+      {% for cat in category %}
+      <li><a href="#">{{cat}}</a><span class="divider">/</span></li>
+      {% endfor %}
+    </ul>
+
+    <div id="search-options" class="span3">
+      <h4>Refine Search</h4>
+      {% if hasMoreCat %}
+      <div class="btn-group">
+	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+	  Refine Category
+	  <span class="caret"></span>
+	</a>
+	<ul class="dropdown-menu">
+          {% for cat in categories %}
+	  <li><a>{{cat}}</a></li>
+	  {% endfor %}
+	</ul>
+      </div>
+      {% endif %}
+      <p>Search By:</p>
+      <a href="/search/people">People</a>/
+      <a href="/search/time">Time</a>/
+      <a href="/search/location">Location</a>
+      
+
+      {% block options%}
+      {% endblock %}
+    </div>
+    
+    <div id="results" class="span9">
+      <form action="" class="form-horizontal" method="POST">
+	<h3>Results</h3>
+	{% block results%}
+	{% endblock %}
+      </form>
+    </div>
+
+    <div class="pagination hidden">
+      <ul>
+	<!-- loop through and create pagnition-->
+	<li><a href="#">&laquo;</a></li>
+	<li><a href="#">1</a></li>
+	<li><a href="#">2</a></li>
+	<li><a href="#">3</a></li>
+	<li><a href="#">4</a></li>
+	<li><a href="#">5</a></li>
+	<li><a href="#">&raquo;</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
+</html>

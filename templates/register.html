@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock%}
+{% block body%}
+{{ super() }}
+<div class="container" >
+  <form class="form-horizontal" action="" method="POST">
+    <legend></legend>
+    <div class="control-group">
+      <label class="control-label" for="inputUser">Username</label>
+      <div class="controls">
+	<input type="text" name="username" id="inputUser" value="{{user}}">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="inputPass">Password</label>
+      <div class="controls">
+	<input type="password" id="inputPass" name="pass1">
+	<input type="password" name="pass2">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="inputName">Name</label>
+      <div class="controls">
+	<input type="text" id="inputName" name="firstname" value="{{firstname}}">
+	<input type="text" name="lastname" value="{{lastname}}">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="inputNickname">Nickname</label>
+      <div class="controls">
+	<input type="text" id="inputNickname" name="nickname" value="{{nickname}}">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="inputGender">Gender</label>
+      <div class="controls">
+	<label class="radio">
+	  {% if gender %}
+	  Male<input type="radio" id="inputGender" name="gender" value="male" checked="true">
+	  {% else %}
+	  Male<input type="radio" id="inputGender" name="gender" value="male">
+	  {% endif %}
+	</label>
+	<label class="radio">
+	  {% if gender %}
+	  Female<input type="radio" name="gender" value="female">
+	  {% else %}
+	  Female<input type="radio" name="gender" value="female" checked="true">
+	  {% endif %}
+	</label>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="inputBirthday">Birthday</label>
+      <div class="controls">
+	<input type="text" id="inputBirthday" name="birthmonth" value="{{birthmonth}}">/
+	<input type="text" name="birthday" value="{{birthday}}">/
+	<input type="text" name="birthyear" value="{{birthyear}}">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="inputPhone">Phone</label>
+      <div class="controls">
+	<input type="text" id="inputPhone" name="phone" value="{{phone}}">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="inputEmail">Email</label>
+      <div class="controls">
+	<input type="text" id="inputEmail" name="email" value="{{email}}">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="inputAddress">Address</label>
+      <div class="controls">
+	<input type="text" name="addressline" value="{{addressline}}"><br>
+	<input type="text" name="addresscity" value="{{addresscity}}"><br>
+	<input type="text" name="addresszipcode" value="{{addresszipcode}}">
+	<button class="btn" name="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+  {% if taken %}
+  This username is already taken.
+  {% endif %}
+  {% if nouser %}
+  Please enter a username.
+  {% endif %}
+  {% if notmatching %}
+  Passwords do not match.
+  {% endif %}
+  {% if nopassword %}
+  Please enter a password.
+  {% endif %}
+  {% endblock%}
+</div>
+</html>

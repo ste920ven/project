@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% block title %}User{% endblock %}
+{% block head %}
+{{ super() }}
+<script type="text/javascript" src="/static/js/user.js"></script>
+{% endblock %}
+{% block body %}
+{{ super() }}
+<div class="container" >
+  <div class="row">
+    <div class="span3">
+      <form action="" method="POST">
+	<a href="#" class="thumbnail">
+	  <img class="img-polaroid" data-src="holder.js/100%x180" alt="...">
+	</a>
+	<input id="_uploadProfilePhoto" type="file" name="_uploadProfilePhoto" accept="image/*">
+      </form>
+    </div>
+    <div class="span6">
+      <form action="" method="POST">
+	<div id="self" value={{isSelf}}></div>
+	<h1>Hello {{name}}</h1>
+	<div name="nickname">Nickname: {{nickname}}</div>
+	<div name="gender">Gender: {{gender}}</div>
+	<div name="birthday">Birthday: {{birthday}}</div>
+	<div name="phone">Phone: {{phone}}</div>
+	<div name="email">Email: {{email}}</div>
+	<div name="address">Address: {{address}}</div>
+	<div name="desire">Desire: {{desire}}</div>
+	{% if isSelf %}
+	<button class="btn" name="edit">Edit</button>
+	{% endif %}
+      </form>
+      <script src="http://code.jquery.com/jquery.js"></script>
+      <script src="js/bootstrap.js"></script>
+    </div>
+    {% if not noUser%}
+    <div class="span3">
+      <form action="" method="POST">
+	<button class="btn" name="desire">Desire</button>
+	{% if not isSelf %}
+	<button class="btn" name="add">Add to my list</button>
+	{% endif %}
+	<button class="btn" name="my_list">My List</button>
+	<button class="btn" name="new_place">New Place</button>
+      </form>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="row">
+    <h1 id="activities">Activities</h1>
+    <form action="" method="POST">
+      {% if isSelf %}
+      <div class="btn-group">
+	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" name="addActivity">
+	  Add
+	  <span class="caret"></span>
+	</a>
+	<ul class="dropdown-menu">
+	  <li class="dropdown-submenu"><a class="category">Education</a></li>
+	  <li class="dropdown-submenu"><a class="category">Art</a></li>
+	  <li class="dropdown-submenu"><a class="category">Go Out</a></li>
+	  <li class="dropdown-submenu"><a class="category">Traveling</a></li>
+	  <li class="dropdown-submenu"><a class="category">Gambling</a></li>
+	  <li class="dropdown-submenu"><a class="category">Games Online</a></li>
+	  <li class="dropdown-submenu"><a class="category">Martial Arts</a></li>
+	  <li class="dropdown-submenu"><a class="category">Sport</a></li>
+	  <li class="dropdown-submenu"><a class="category">Services</a></li>
+	  <li class="dropdown-submenu"><a class="category">Jobs</a></li>
+	  <li><a class="category">Other</a></li>
+	</ul>
+      </div>
+      {% endif %}
+      {% for activity in activities %}
+      <div class="activity_wrapper span12">
+	<div class="row">
+	  <legend></legend>
+	  <h4 class="p1">{{activity[0]}}</h4>
+	  <div class="info">
+	    <input type="hidden" name="{{activity[0]}}_interest_info" value="{{activity[1]}}">
+	    <input type="hidden" name="{{activity[0]}}_ability_info" value="{{activity[2]}}">
+	    <input type="hidden" name="{{activity[0]}}_times_info" value="{{activity[3]}}">
+	    <input type="hidden" name="{{activity[0]}}_static_info" value="True">
+	  </div>
+	  <div class="span12">
+	    <h5>Interest</h5>
+	    <div class="ratings-container">
+	      <i class="star icon-star-empty" name="1"></i>
+	      <i class="star icon-star-empty" name="2"></i>
+	      <i class="star icon-star-empty" name="3"></i>
+	      <i class="star icon-star-empty" name="4"></i>
+	      <i class="star icon-star-empty" name="5"></i>
+	    </div>
+	  </div>
+	  <div class="span12 ability-rating">
+	    <h5>Ability</h5>
+	    <div class="btn-group" data-toggle="buttons-radio">
+	      <button type="button" class="btn" disabled>0</button>
+	      <button type="button" class="btn" disabled>1</button>
+	      <button type="button" class="btn" disabled>2</button>
+	      <button type="button" class="btn" disabled>3</button>
+	      <button type="button" class="btn" disabled>4</button>
+	      <button type="button" class="btn" disabled>5</button>
+	      <button type="button" class="btn" disabled>6</button>
+	      <button type="button" class="btn" disabled>7</button>
+	      <button type="button" class="btn" disabled>8</button>
+	      <button type="button" class="btn" disabled>9</button>
+	      <button type="button" class="btn" disabled>10</button>
+	    </div>
+	    <span class="badge"></span>
+	  </div>
+	  <div class="span7">
+	    <h5>Self Describe</h5>
+	    {% if isSelf %}
+	    <input type="text" name="{{activity[0]}}_describe" value="{{activity[5]}}">
+	    {% else %}
+	    <p>{{activity[5]}}</p>
+	    {% endif %}
+	    
+	    <h6>Times Available</h6>
+	    <div class="btn-group" data-toggle="buttons-checkbox">
+	      <div class="btn" name="Sun">Sun</div>
+	      <div class="btn" name="Mon">Mon</div>
+	      <div class="btn" name="Tue">Tues</div>
+	      <div class="btn" name="Wed">Weds</div>
+	      <div class="btn" name="Thu">Thurs</div>
+	      <div class="btn" name="Fri">Fri</div>
+	      <div class="btn" name="Sat">Sat</div>
+	    </div>	
+	    <div class="btn-group times" data-toggle="buttons-checkbox">
+	    </div>
+	  </div>
+	  <div class="span5">
+	    <h5>Comments</h5>
+	    {% for comment in activity[4] %}
+	    <div>{{comment}}</div>
+	    {% endfor %}
+	  </div>
+	</div>
+
+      </div>
+      {% endfor %}
+      <br>
+      {% if isSelf %}
+      <button class="btn save" name="save">Save</button>
+      {% endif %}
+    </form>
+    <div class="row">
+      <h1>Exchange</h1>
+      {% if isSelf %}
+      <div class="btn" name="addExchange">Add</div>
+      {% endif %}
+      <label>time:</label>
+      <p>ASDFASFSDFDSAF for </p>
+      <img><p class="">asfsdf</p>
+      {% for exhange in exchanges %}
+      
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+</html>
+

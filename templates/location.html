@@ -1,0 +1,22 @@
+{% extends "search.html" %}
+{% block title %}Home{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock%}
+{% block options %}
+<p>Location</p>
+<input type="text"></input>
+<p>Sort by</p>
+<a href="#">Highest rated</a><br>
+
+<a href="#">Best match</a><br>
+
+<a href="#">Highest Feedback</a><br>
+
+<a href="#">Price</a><br>
+
+<a href="#">Distance</a>
+{% endblock %}
+{% block results %}
+
+{% endblock %}

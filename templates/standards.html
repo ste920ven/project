@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Standards{% endblock %}
+{% block head %}
+{{ super() }}
+<script type="text/javascript" src="/static/js/standards.js"></script>
+{% endblock %}
+{% block body %}
+{{ super() }}
+
+<div class="container">
+  <div class="row">
+    <div class="span3 bs-docs-sidebar">
+      <a href="#recent">Recent</a>/
+      <a href="#popular">Popular</a>
+
+      <ul id="sidebar" class="nav nav-list bs-docs-sidenav affix">
+	<li name="0-5" class="">
+	  <a href="#0-5" onclick="showStandards(5)">
+	    <i class="icon-chevron-right"></i>0-5</a>
+	</li>
+	<li name="5-10" class="">
+	  <a href="#5-10" onclick="showStandards(10)">
+	    <i class="icon-chevron-right"></i>5-10</a>
+	</li>
+	<li name="10-15" class="">
+	  <a href="#10-15" onclick="showStandards(15)">	  
+	    <i class="icon-chevron-right"></i>10-15</a>
+	</li>
+	<li name="15-20" class="">
+	  <a href="#15-20" onclick="showStandards(20)">
+	    <i class="icon-chevron-right"></i>15-20</a>
+	</li>
+	<li name="20-25" class="">
+	  <a href="#20-25" onclick="showStandards(25)">
+	    <i class="icon-chevron-right"></i>20-25</a>
+	</li>
+	<li name="25-30" class="">
+	  <a href="#25-30" onclick="showStandards(30)">
+	    <i class="icon-chevron-right"></i>25-30</a>
+	</li>
+	<li name="30-35" class="">
+	  <a href="#30-35" onclick="showStandards(35)">
+	    <i class="icon-chevron-right"></i>30-35</a>
+	</li>
+	<li name="35-40" class="">
+	  <a href="#35-40" onclick="showStandards(40)">
+	    <i class="icon-chevron-right"></i>35-40</a>
+	<li name="40-45" class="">
+	  <a href="#40-45" onclick="showStandards(45)">
+	    <i class="icon-chevron-right"></i>40-45</a>
+	</li>
+	<li name="45-50" class="">
+	  <a href="#45-50" onclick="showStandards(50)">
+	    <i class="icon-chevron-right"></i>45-50</a>
+	</li>
+	<li name="50-55" class="">
+	  <a href="#50-55" onclick="showStandards(55)">
+	    <i class="icon-chevron-right"></i>50-55</a>
+	</li>
+      </ul>
+      
+    </div>
+    <div class="span9">
+      <form action="" method="POST">
+	<input type="hidden" id="num" name="age" value={{age}}>
+	<div class="row">
+	  <h3 class="span6">Statements</h3>
+	  <h3 class="span3">Rate</h3>
+	</div>
+	<ul id="standards_list">
+	</ul>
+	{% if nostandard %}
+	<p class="error">Please enter a standard</p>
+	{% endif %}
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}

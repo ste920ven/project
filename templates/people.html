@@ -1,0 +1,63 @@
+{% extends "search.html" %}
+{% block title %}Home{% endblock %}
+{% block head %}
+{{ super() }}
+<script type="text/javascript" src="/static/js/people.js"></script>
+{% endblock%}
+{% block options %}
+<p>Sort by</p>
+<label class="radio">
+  <input type="radio" name="sort">Interest<br>
+</label>
+<label class="radio">
+  <input type="radio" name="sort">Relationship<br>
+</label>
+<label class="radio">
+  <input type="radio" name="sort">Skill<br>
+</label>
+<p>Avg. Interest</p>
+<i class="star icon-star"></i>
+<i class="star icon-star-empty"></i>
+<i class="star icon-star-empty"></i>
+<i class="star icon-star-empty"></i>
+<i class="star icon-star-empty"></i><a href='#'>1+</a><br>
+<i class="star icon-star"></i>
+<i class="star icon-star"></i>
+<i class="star icon-star-empty"></i>
+<i class="star icon-star-empty"></i>
+<i class="star icon-star-empty"></i><a href='#'>2+</a><br>
+<i class="star icon-star"></i>
+<i class="star icon-star"></i>
+<i class="star icon-star"></i>
+<i class="star icon-star-empty"></i>
+<i class="star icon-star-empty"></i><a href='#'>3+</a><br>
+<i class="star icon-star"></i>
+<i class="star icon-star"></i>
+<i class="star icon-star"></i>
+<i class="star icon-star"></i>
+<i class="star icon-star-empty"></i><a href='#'>4+</a><br>
+<p>Avg. Skill</p>
+<a href="#"><span class="badge" value='1'>1+</span></a>
+<a href="#"><span class="badge" value='2'>2+</span></a>
+<a href="#"><span class="badge" value='3'>3+</span></a>
+<a href="#"><span class="badge" value='4'>4+</span></a>
+<a href="#"><span class="badge" value='5'>5+</span></a><br>
+<a href="#"><span class="badge" value='6'>6+</span></a>
+<a href="#"><span class="badge" value='7'>7+</span></a>
+<a href="#"><span class="badge" value='8'>8+</span></a>
+<a href="#"><span class="badge" value='9'>9+</span></a>
+
+{% endblock %}
+{% block results %}
+{% for profile in profiles %}
+<div class="profile_preview">
+  <p>{{profile[0]}}</p>
+  <p>Username: {{profile[4]}}</p>
+  <p class="inline" value="{{profile[1]}}">Interest: </p>
+  <img>
+  <br>
+  <p class="inline">Ability: </p>
+  <span class="badge">{{profile[2]}}</span>
+</div>
+{% endfor %}
+{% endblock %}

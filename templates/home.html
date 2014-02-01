@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block head %}
+{{ super() }}
+<script type="text/javascript" src="/static/js/home.js"></script>
+{% endblock %}
+{% block body %}
+{{ super() }}
+<div class="container center-container">
+  <form acion="" method="POST">
+    <div class="row">
+      <div class="span4">
+	<div class="block btn-group">
+	  <button class="btn btn-large dropdown-toggle" name="cat1" data-toggle="dropdown" href="#">Education</button>
+	  <ul class="dropdown-menu">
+	    <!-- dropdown menu links -->
+	    {% for cat in categories[0] %}
+	    <li><a>{{cat}}</a></li>
+	    {% endfor %}
+	  </ul>
+	</div>
+      </div>
+      <!--
+	  <button class="btn" name="cat1"><h3>Sport</h3></button>
+	  -->
+      <div class="span4">
+	<div class="block btn-group">
+	  <button class="btn btn-large dropdown-toggle" name="cat2" data-toggle="dropdown" href="#">Music/Art</button>
+	  <ul class="dropdown-menu">
+	    <!-- dropdown menu links -->
+	    {% for cat in categories[1] %}
+	    <li><a>{{cat}}</a></li>
+	    {% endfor %}
+	  </ul>
+	</div>
+      </div>
+      <div class="span4">
+	<div class="block btn-group">
+	  <button class="btn btn-large dropdown-toggle" name="cat3" data-toggle="dropdown" href="#">Traveling</button>
+	  <ul class="dropdown-menu">
+	    <!-- dropdown menu links -->
+	    {% for cat in categories[2] %}
+	    <li><a>{{cat}}</a></li>
+	    {% endfor %}
+	  </ul>
+	</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span4">
+	<div class="block btn-group">
+	  <button class="btn btn-large dropdown-toggle" name="cat4" data-toggle="dropdown" href="#">Gambling</button>
+	  <ul class="dropdown-menu">
+	    <!-- dropdown menu links -->
+	    {% for cat in categories[3] %}
+	    <li><a>{{cat}}</a></li>
+	    {% endfor %}
+	  </ul>
+	</div>
+      </div>
+
+      <div id="centerthing" class="span3 offset1">
+	<!-- Button to trigger modal -->
+	<a href="#myModal" role="button" class="btn" data-toggle="modal">Exchange</a>
+	
+	<!-- Modal -->
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	    <h3 id="myModalLabel">Exchange</h3>
+	  </div>
+	  <div class="modal-body">
+	    <ul>
+	      <li><a>Time</a></li>
+	      <li><a>Skill/ ability</a></li>
+	      <li><a>Experience/knowledge</a></li>
+	      <li><a>Relationship</a></li>
+	      <li><a>Jobs/ services</a></li>
+	      <li><a>Food/drink</a></li>
+	      <li><a>Electronics</a></li>
+	      <li><a>Clothes/fashion</a></li>
+	      <li><a>Home/furniture</a></li>
+	      <li><a>Collectible/arts</a></li>
+	      <li><a>Space</a></li>
+	      <li><a>Money</a></li>
+	    </ul>
+	  </div>
+	  <div class="modal-footer">
+	  </div>
+	</div>
+
+      </div>
+
+      <div class="span4">
+	<div class="block btn-group">
+	  <button class="btn btn-large dropdown-toggle" name="cat5" data-toggle="dropdown" href="#">Games/Online</button>
+	  <ul class="dropdown-menu">
+	    <!-- dropdown menu links -->
+	    {% for cat in categories[4] %}
+	    <li><a>{{cat}}</a></li>
+	    {% endfor %}
+	  </ul>
+	</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span4">
+	<div class="block btn-group">
+	  <button class="btn btn-large dropdown-toggle" name="cat6" data-toggle="dropdown" href="#">Martial Arts</button>
+	  <ul class="dropdown-menu">
+	    <!-- dropdown menu links -->
+	    {% for cat in categories[5] %}
+	    <li><a>{{cat}}</a></li>
+	    {% endfor %}
+	  </ul>
+	</div>
+      </div>
+      <div class="span4">
+	<div class="block btn-group">
+	  <button class="btn btn-large dropdown-toggle" name="cat7" data-toggle="dropdown" href="#">Sports</button>
+	  <ul class="dropdown-menu">
+	    <!-- dropdown menu links -->
+	    {% for cat in categories[6] %}
+	    <li><a>{{cat}}</a></li>
+	    {% endfor %}
+	  </ul>
+	</div>
+      </div>
+      <div class="span4">
+	<div class="block btn-group">
+	  <button class="btn btn-large dropdown-toggle" name="cat8" data-toggle="dropdown" href="#">Sports</button>
+	  <ul class="dropdown-menu">
+	    <!-- dropdown menu links -->
+	    {% for cat in categories[7] %}
+	    <li><a>{{cat}}</a></li>
+	    {% endfor %}
+	  </ul>
+	</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span4">
+	<div class="block btn-group">
+	  <button class="btn btn-large dropdown-toggle" name="cat9" data-toggle="dropdown" href="#">Services</button>
+	  <ul class="dropdown-menu">
+	    <!-- dropdown menu links -->
+	    {% for cat in categories[8] %}
+	    <li><a>{{cat}}</a></li>
+	    {% endfor %}
+	  </ul>
+	</div>
+      </div>
+      <div class="span4">
+	<div class="block btn-group">
+	  <button class="btn btn-large dropdown-toggle" name="cat10" data-toggle="dropdown" href="#">Jobs</button>
+	  <ul class="dropdown-menu">
+	    <!-- dropdown menu links -->
+	    {% for cat in categories[9] %}
+	    <li><a>{{cat}}</a></li>
+	    {% endfor %}
+	  </ul>
+	</div>
+      </div>
+      <div class="span4">
+	<div class="block btn-group">
+	  <button class="btn btn-large dropdown-toggle" name="cat11" data-toggle="dropdown" href="#">Other</button>
+	  <ul class="dropdown-menu">
+	    <!-- dropdown menu links -->
+	    {% for cat in categories[10] %}
+	    <li><a>{{cat}}</a></li>
+	    {% endfor %}
+	  </ul>
+	</div>  
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
+</html>

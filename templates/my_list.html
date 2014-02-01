@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}User{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block body %}
+{{ super() }}
+<div class="container">
+  <div class="row">
+    <div class="span6 offset2">
+      <div class="row">
+	<h4>My List</h4>
+	<legend>First Connection</legend>
+	{% for x in first %} 
+	<div class="span3">
+	  <a href="#" class="thumbnail">
+	    <img class="img-polaroid" data-src="holder.js/100%x180" alt="...">
+	  </a>
+	  <p>name</p>
+	</div>
+	{% endfor %}
+	<legend>Second Connection</legend>
+	{% for x in second %}
+	{% endfor %}
+	<legend>Third Connection</legend>
+	{% for x in third %}
+	{% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endblock %}
